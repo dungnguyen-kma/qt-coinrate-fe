@@ -10,18 +10,18 @@ export default function InputForm() {
   const ratesMutation = useMutation({
     mutationKey: ["rates"],
     mutationFn: (inputData: any) => setRate(inputData),
-    onSuccess: (data) => {
-      queryClient.setQueryData(["rates"], data);
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["rates"],
+      })
     },
   });
-
 
   const handleScanCoin = () => {
     ratesMutation.mutate(formData);
     setFormData({});
   };
 
-   
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: Number(value) });
@@ -48,6 +48,7 @@ export default function InputForm() {
             variant="outlined"
             label="USDT/VND rate"
             type="number"
+            value={formData?.usdt_nvd_rate || ""}
             fullWidth
             onChange={(e) => handleChange(e)}
           />
@@ -59,6 +60,7 @@ export default function InputForm() {
             variant="outlined"
             label="KRW/VND rate"
             type="number"
+            value={formData?.krw_vnd_rate || ""}
             fullWidth
             onChange={(e) => handleChange(e)}
           />

@@ -15,6 +15,7 @@ export default function TableData() {
     queryFn: () => getRate(),
   });
 
+
   const renderCell = (params: any) => {
     if (rates?.data?.krw_vnd_rate > params.value) {
       return (
