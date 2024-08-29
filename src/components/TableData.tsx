@@ -1,5 +1,5 @@
 import { DataGrid } from "@mui/x-data-grid";
-import { columns } from "./TableColumn";
+import { columns} from "./TableColumn";
 import { DataTableType } from "../assets/dataTableType";
 import { useQuery } from "@tanstack/react-query";
 import { getAllCoin, getRate } from "../api/api";
@@ -22,15 +22,13 @@ export default function TableData() {
           {params.value}
         </span>
       );
-    }
-    if (rates?.data?.krw_vnd_rate < params.value) {
+    } else {
       return (
         <span className="text-[10px] md:text-base text-blue-600">
           {params.value}
         </span>
       );
     }
-    return <span className="text-[10px] md:text-base">{params.value}</span>;
   };
 
   const updatedColumns = columns.map((col) => {

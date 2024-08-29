@@ -9,6 +9,9 @@ export const columns: GridColDef[] = [
     disableColumnMenu: true,
     sortable: false,
     renderHeader: () => <span className="text-[10px] md:text-base">Token</span>,
+    renderCell: (params) => (
+      <span className="text-[10px] md:text-base ">{params.value}</span>
+    ),
   },
   {
     field: "bnb",
@@ -18,7 +21,10 @@ export const columns: GridColDef[] = [
     disableColumnMenu: true,
     sortable: false,
     renderHeader: () => (
-      <span className="text-[10px] md:text-base">BNB(1)</span>
+      <span className="text-[10px] md:text-base">BNB</span>
+    ),
+    renderCell: (params) => (
+      <span className="text-[10px] md:text-base ">{params.value}</span>
     ),
   },
   {
@@ -29,7 +35,10 @@ export const columns: GridColDef[] = [
     disableColumnMenu: true,
     sortable: false,
     renderHeader: () => (
-      <span className="text-[10px] md:text-base">Upbit(2)</span>
+      <span className="text-[10px] md:text-base">Upbit</span>
+    ),
+    renderCell: (params) => (
+      <span className="text-[10px] md:text-base ">{params.value}</span>
     ),
   },
   {
@@ -40,7 +49,10 @@ export const columns: GridColDef[] = [
     disableColumnMenu: true,
     sortable: false,
     renderHeader: () => (
-      <span className="text-[10px] md:text-base">Bithumb(3)</span>
+      <span className="text-[10px] md:text-base">Bithumb</span>
+    ),
+    renderCell: (params) => (
+      <span className="text-[10px] md:text-base ">{params.value}</span>
     ),
   },
   {
@@ -53,6 +65,9 @@ export const columns: GridColDef[] = [
     renderHeader: () => (
       <span className="text-[10px] md:text-base">Upbit rate</span>
     ),
+    renderCell: (params) => (
+      <span className="text-[10px] md:text-base ">{params.value}</span>
+    ),
   },
   {
     field: "bithumb_rate",
@@ -63,6 +78,9 @@ export const columns: GridColDef[] = [
     sortable: false,
     renderHeader: () => (
       <span className="text-[10px] md:text-base">Bithumb rate</span>
+    ),
+    renderCell: (params) => (
+      <span className="text-[10px] md:text-base ">{params.value}</span>
     ),
   },
 ];
