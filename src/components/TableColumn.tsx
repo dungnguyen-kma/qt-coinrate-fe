@@ -42,7 +42,6 @@ export const columns: GridColDef[] = [
     renderHeader: () => (
       <span className="text-[10px] md:text-base">Bithumb(3)</span>
     ),
-
   },
   {
     field: "upbit_rate",
@@ -54,7 +53,6 @@ export const columns: GridColDef[] = [
     renderHeader: () => (
       <span className="text-[10px] md:text-base">Upbit rate</span>
     ),
-
   },
   {
     field: "bithumb_rate",
@@ -66,6 +64,5 @@ export const columns: GridColDef[] = [
     renderHeader: () => (
       <span className="text-[10px] md:text-base">Bithumb rate</span>
     ),
-
   },
 ];

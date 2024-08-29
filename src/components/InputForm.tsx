@@ -19,7 +19,6 @@ export default function InputForm() {
 
   const handleScanCoin = () => {
     ratesMutation.mutate(formData);
-    setFormData({});
   };
 
   const handleChange = (e: any) => {

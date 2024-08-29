@@ -1,5 +1,5 @@
 import { DataGrid } from "@mui/x-data-grid";
-import { columns } from "./TableColumn";
+import { columns} from "./TableColumn";
 import { DataTableType } from "../assets/dataTableType";
 import { useQuery } from "@tanstack/react-query";
 import { getAllCoin, getRate } from "../api/api";
@@ -14,7 +14,6 @@ export default function TableData() {
     queryKey: ["rates"],
     queryFn: () => getRate(),
   });
-
 
   const renderCell = (params: any) => {
     if (rates?.data?.krw_vnd_rate > params.value) {

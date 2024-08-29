@@ -10,7 +10,7 @@ const coinAxios: AxiosInstance = axios.create({
 
 // tao instance axios cho set rate
 const rateAxios: AxiosInstance = axios.create({
-  baseURL: "/api",
+  baseURL: "/api/",
   headers: {
     "Content-Type": "application/json",
   },
