@@ -2,8 +2,6 @@ import { Container, Grid2 } from "@mui/material";
 import "./App.css";
 import InputForm from "./components/InputForm";
 import TableData from "./components/TableData";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-
 function App() {
   return (
     <>

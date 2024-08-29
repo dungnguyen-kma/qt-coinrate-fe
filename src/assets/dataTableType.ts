@@ -1,5 +1,4 @@
 export interface DataTableType {
-  id: number;
   token: string;
   bnb: number;
   upbit: number;
