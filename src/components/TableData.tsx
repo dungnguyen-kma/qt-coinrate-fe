@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DataGrid } from "@mui/x-data-grid";
 import { columns } from "./TableColumn";
 import { DataTableType } from "../assets/dataTableType";
@@ -65,8 +66,18 @@ export default function TableData() {
         columns={updatedColumns}
         rows={rows}
         hideFooter={true}
-        // disableColumnResize={true}
+        disableColumnResize={true}
         getRowId={(row) => row.token}
+        sx={{
+          "& .MuiDataGrid-cell": {
+            padding: "0px",
+          },
+          "& .MuiDataGrid-columnHeader": {
+            padding: "0px", 
+          },
+          border: "none",
+          
+        }}
       ></DataGrid>
     </>
   );
