@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios";
 
 // tao instance axios cho get coin
@@ -40,7 +41,7 @@ export const getRate = async () => {
   }
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export const setRate = async (data: any) => {
   try {
     const res: AxiosResponse = await rateAxios.post("rates", data);
