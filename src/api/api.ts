@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios";
 
 // tao instance axios cho get coin
 const coinAxios: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: "http://103.237.146.91:8000/",
   headers: {
     "Content-Type": "application/json",
   },
@@ -10,7 +10,7 @@ const coinAxios: AxiosInstance = axios.create({
 
 // tao instance axios cho set rate
 const rateAxios: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: "http://103.237.146.91:8000/",
   headers: {
     "Content-Type": "application/json",
   },
@@ -43,7 +43,7 @@ export const getRate = async () => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const setRate = async (data: any) => {
   try {
-    const res: AxiosResponse = await rateAxios.post("/rates", data);
+    const res: AxiosResponse = await rateAxios.post("rates", data);
     return res?.data;
   } catch (error) {
     return handleError(error as AxiosError);
