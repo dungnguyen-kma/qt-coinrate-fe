@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios";
 
 // tao instance axios cho get coin
 const coinAxios: AxiosInstance = axios.create({
-  baseURL: "http://103.237.146.91:8000/",
+  baseURL: "/api/",
   headers: {
     "Content-Type": "application/json",
   },
@@ -10,7 +10,7 @@ const coinAxios: AxiosInstance = axios.create({
 
 // tao instance axios cho set rate
 const rateAxios: AxiosInstance = axios.create({
-  baseURL: "http://103.237.146.91:8000/",
+  baseURL: "/api",
   headers: {
     "Content-Type": "application/json",
   },
