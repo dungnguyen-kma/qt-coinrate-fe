@@ -1,5 +1,5 @@
 import { DataGrid } from "@mui/x-data-grid";
-import { columns} from "./TableColumn";
+import { columns } from "./TableColumn";
 import { DataTableType } from "../assets/dataTableType";
 import { useQuery } from "@tanstack/react-query";
 import { getAllCoin, getRate } from "../api/api";
@@ -8,6 +8,9 @@ export default function TableData() {
   const coins = useQuery({
     queryKey: ["coins"],
     queryFn: () => getAllCoin(),
+    refetchInterval: 120000,
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
   });
 
   const rates = useQuery({
@@ -62,7 +65,7 @@ export default function TableData() {
         columns={updatedColumns}
         rows={rows}
         hideFooter={true}
-        disableColumnResize={true}
+        // disableColumnResize={true}
         getRowId={(row) => row.token}
       ></DataGrid>
     </>
