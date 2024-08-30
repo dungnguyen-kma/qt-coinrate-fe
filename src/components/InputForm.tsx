@@ -43,7 +43,7 @@ export default function InputForm() {
         <Grid2 size={12}>
           <TextField
             id="USDT/VND"
-            name="usdt_nvd_rate"
+            name="usdt_vnd_rate"
             variant="outlined"
             label="USDT/VND rate"
             type="number"
