@@ -9,7 +9,7 @@ export default function TableData() {
   const coins = useQuery({
     queryKey: ["coins"],
     queryFn: () => getAllCoin(),
-    refetchInterval: 120000,
+    refetchInterval: 20000,
     refetchOnWindowFocus: true,
     refetchOnReconnect: true,
   });
