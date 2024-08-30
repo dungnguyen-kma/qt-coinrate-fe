@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, FormControl, Grid2, TextField } from "@mui/material";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
