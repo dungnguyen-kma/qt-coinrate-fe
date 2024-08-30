@@ -47,7 +47,7 @@ export default function InputForm() {
             variant="outlined"
             label="USDT/VND rate"
             type="number"
-            value={formData?.usdt_nvd_rate || ""}
+            value={formData?.usdt_vnd_rate || ""}
             fullWidth
             onChange={(e) => handleChange(e)}
           />
