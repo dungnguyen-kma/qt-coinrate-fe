@@ -1,20 +1,23 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, FormControl, Grid2, TextField } from "@mui/material";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { setRate } from "../api/api";
+import { FormDataType } from "../assets/types";
 
 export default function InputForm() {
-  const [formData, setFormData] = useState<any>();
+  const [formData, setFormData] = useState<FormDataType>({
+    usdt_vnd_rate: 0,
+    krw_vnd_rate: 0,
+  });
   const queryClient = useQueryClient();
 
   const ratesMutation = useMutation({
     mutationKey: ["rates"],
-    mutationFn: (inputData: any) => setRate(inputData),
+    mutationFn: (inputData: FormDataType) => setRate(inputData),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["rates"],
-      })
+      });
     },
   });
 
@@ -22,9 +25,10 @@ export default function InputForm() {
     ratesMutation.mutate(formData);
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: Number(value) });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setFormData((prev: any) => ({ ...prev, [name]: Number(value) }));
   };
   return (
     <>
@@ -50,7 +54,7 @@ export default function InputForm() {
             type="number"
             value={formData?.usdt_vnd_rate || ""}
             fullWidth
-            onChange={(e) => handleChange(e)}
+            onChange={handleChange}
           />
         </Grid2>
         <Grid2 size={12}>
@@ -62,7 +66,7 @@ export default function InputForm() {
             type="number"
             value={formData?.krw_vnd_rate || ""}
             fullWidth
-            onChange={(e) => handleChange(e)}
+            onChange={handleChange}
           />
         </Grid2>
         <Grid2 container size={12} sx={{ gap: 2, justifyContent: "center" }}>
