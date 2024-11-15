@@ -6,3 +6,9 @@ export interface DataTableType {
   upbit_rate: number;
   bithumb_rate: number;
 }
+
+export interface FormDataType {
+  usdt_vnd_rate: number;
+  krw_vnd_rate: number;
+}
+

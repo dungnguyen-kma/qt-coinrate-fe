@@ -43,7 +43,7 @@ export default function TableData() {
       token: data?.coin_symbol || "no data",
       bnb: data?.price_at_binance || "no data",
       upbit: data?.price_at_upbit || "no data",
-      bithumb: data?.price_at_bithump || "no data",
+      bithumb: data?.price_at_bithumb || "no data",
       upbit_rate: Number(data?.upbit_rate.toFixed(3)) || "no data",
       bithumb_rate: Number(data?.bithumb_rate.toFixed(3)) || "no data",
     })
